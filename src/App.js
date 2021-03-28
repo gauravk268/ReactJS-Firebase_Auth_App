@@ -1,13 +1,23 @@
-import { Signup } from "./components";
+import { Signup, Login, Dashboard } from "./components";
+import { Container } from "react-bootstrap/";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Hello World!!</h1>
-        <Signup />
-      </header>
-    </div>
+    <Container
+      className="d-flex align-items-center justify-content-center"
+      style={{ minHeight: "100vh" }}
+    >
+      <div className="w-100" style={{ maxWidth: "400px" }}>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Dashboard} />
+            <Route path="/signup" component={Signup} />
+            <Route path="/login" component={Login} />
+          </Switch>
+        </Router>
+      </div>
+    </Container>
   );
 }
 

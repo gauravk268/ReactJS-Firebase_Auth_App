@@ -12,8 +12,8 @@ function Dashboard() {
     try {
       await logout();
       history.push("/login");
-    } catch {
-      setError("Failed to log out. Try again Later.");
+    } catch (e) {
+      setError(e + " Try again Later.");
     }
   };
 

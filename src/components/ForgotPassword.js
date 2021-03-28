@@ -21,6 +21,7 @@ function ForgotPassword(props) {
       setMessage("Check your inbox for further instructions.");
     } catch {
       setError("Failed to Reset Password. Try again later.");
+      setLoading(false);
     }
   }
 

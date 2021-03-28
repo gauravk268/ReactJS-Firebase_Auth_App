@@ -31,8 +31,8 @@ export default function UpdateProfile() {
       .then(() => {
         history.push("/");
       })
-      .catch(() => {
-        setError("Failed to update account. Try again later.");
+      .catch((e) => {
+        setError(e + " Try again later.");
       })
       .finally(() => {
         setLoading("false");

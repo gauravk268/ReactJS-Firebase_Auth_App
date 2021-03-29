@@ -1,14 +1,19 @@
 import React, { useRef, useState } from "react";
 import { Form, Card, Button, Alert } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
 function ForgotPassword(props) {
   const emailRef = useRef();
-  const { resetPassword } = useAuth();
+  const { currentUser, resetPassword } = useAuth();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
+  const history = useHistory();
+
+  if (currentUser !== null) {
+    history.push("/");
+  }
 
   async function handleSubmit(e) {
     e.preventDefault();

@@ -4,6 +4,7 @@ import Login from "./Login";
 import PrivateRoute from "./PrivateRoute";
 import ForgotPassword from "./ForgotPassword";
 import UpdateProfile from "./UpdateProfile";
+import Error404 from "./Error404";
 
 export {
   Signup,
@@ -12,4 +13,5 @@ export {
   PrivateRoute,
   ForgotPassword,
   UpdateProfile,
+  Error404,
 };

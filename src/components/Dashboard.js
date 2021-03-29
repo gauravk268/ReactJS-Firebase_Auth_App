@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card, Button, Alert } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, Redirect } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
 function Dashboard() {
@@ -8,14 +8,19 @@ function Dashboard() {
   const [error, setError] = useState("");
   const history = useHistory();
 
-  const handleLogout = async () => {
+  if (currentUser === null) {
+    console.log("currentUser", currentUser);
+    <Redirect to="/" />;
+  }
+
+  async function handleLogout() {
     try {
       await logout();
       history.push("/login");
     } catch (e) {
       setError(e + " Try again Later.");
     }
-  };
+  }
 
   return (
     <div>

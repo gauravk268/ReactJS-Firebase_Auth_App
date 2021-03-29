@@ -6,10 +6,14 @@ import { useAuth } from "../contexts/AuthContext";
 function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { login } = useAuth();
+  const { currentUser, login } = useAuth();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const history = useHistory();
+
+  if (currentUser !== null) {
+    history.push("/");
+  }
 
   async function handleSubmit(e) {
     e.preventDefault();

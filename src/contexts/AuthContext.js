@@ -7,25 +7,25 @@ export function useAuth() {
   return useContext(AuthContext);
 }
 
-export function AuthProvider(props) {
+export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
 
-  function signup(email, password) {
+  const signup = (email, password) => {
     return auth.createUserWithEmailAndPassword(email, password);
-  }
+  };
 
-  function login(email, password) {
+  const login = (email, password) => {
     return auth.signInWithEmailAndPassword(email, password);
-  }
+  };
 
-  function logout() {
+  const logout = () => {
     return auth.signOut();
-  }
+  };
 
-  function resetPassword(email) {
+  const resetPassword = (email) => {
     return auth.sendPasswordResetEmail(email);
-  }
+  };
 
   const updateEmail = (email) => {
     return currentUser.updateEmail(email);
@@ -37,7 +37,9 @@ export function AuthProvider(props) {
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
-      setCurrentUser(user);
+      if (user) {
+        setCurrentUser(user);
+      }
       setLoading(false);
     });
 
@@ -46,8 +48,8 @@ export function AuthProvider(props) {
 
   const value = {
     currentUser,
-    signup,
     login,
+    signup,
     logout,
     resetPassword,
     updateEmail,
@@ -56,7 +58,7 @@ export function AuthProvider(props) {
 
   return (
     <AuthContext.Provider value={value}>
-      {!loading && props.children}
+      {!loading && children}
     </AuthContext.Provider>
   );
 }

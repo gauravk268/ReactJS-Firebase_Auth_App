@@ -12,6 +12,10 @@ export default function UpdateProfile() {
   const [loading, setLoading] = useState(false);
   const history = useHistory();
 
+  if (currentUser === null) {
+    history.push("/login");
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {

@@ -7,10 +7,14 @@ export default function Signup() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { signup } = useAuth();
+  const { currentUser, signup } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
+
+  if (currentUser !== null) {
+    history.push("/");
+  }
 
   async function handleSubmit(e) {
     e.preventDefault();

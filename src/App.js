@@ -5,6 +5,7 @@ import {
   PrivateRoute,
   ForgotPassword,
   UpdateProfile,
+  Error404,
 } from "./components";
 import { Container } from "react-bootstrap/";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -25,6 +26,7 @@ function App() {
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />
+              <Route path="*" component={() => <Error404 />} />
             </Switch>
           </Router>
         </div>

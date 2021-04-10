@@ -5,6 +5,7 @@ import {
   PrivateRoute,
   ForgotPassword,
   UpdateProfile,
+  ScanQR,
   Error404,
 } from "./components";
 import { Container } from "react-bootstrap/";
@@ -24,6 +25,7 @@ function App() {
               <PrivateRoute exact path="/" component={Dashboard} />
               <PrivateRoute path="/update-profile" component={UpdateProfile} />
               <Route path="/signup" component={Signup} />
+              <Route path="/scanqr" component={ScanQR} />
               <Route path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />
               <Route path="*" component={() => <Error404 />} />

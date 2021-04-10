@@ -6,6 +6,8 @@
 
 #### Want to see a hosted version? Goto: https://gauravk268dev-firebase-auth-app.netlify.app
 
+#### Backend API hosted at: https://gauravk268-node-store-app.herokuapp.com/
+
 ## Functionalities:
 
 - Sign Up for the project
@@ -17,7 +19,7 @@
 
 ## Installation and Setup Instructions
 
-Clone down this repository and cd to todo-app. You will need `node` and `npm` installed globally on your machine.
+Clone down this repository and cd to React-Firebase-Auth-App folder. You will need `node` and `npm` installed globally on your machine.
 
 Installation:
 

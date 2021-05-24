@@ -36,3 +36,14 @@ To Start Server:
 To Visit App:
 
 `localhost:3000`
+
+## Contribute:
+
+  - Issue Tracker: http://github.com/gauravk268/ReactJS-Firebase_Auth_App/issues
+  - Source Code: http://github.com/gauravk268/ReactJS-Firebase_Auth_App
+
+## License:
+
+  The project is licensed under the MIT license.
+	
+

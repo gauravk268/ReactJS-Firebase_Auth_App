@@ -4,7 +4,7 @@
 
 #### Project Status: [![Netlify Status](https://api.netlify.com/api/v1/badges/f29f8186-5287-4eb8-a813-5406702b03f5/deploy-status)](https://app.netlify.com/sites/gauravk268dev-react-firebase-auth-app/deploys)
 
-#### Want to see a hosted version? Goto: https://gauravk268dev-firebase-auth-app.netlify.app
+#### Want to see a hosted version? Goto: [firebase-auth-app.gauravk.co](https://firebase-auth-app.gauravk.co) / [alternate address](https://gauravk268-firebase-auth-app.netlify.app)
 
 #### Backend API hosted at: https://gauravk268-node-store-app.herokuapp.com/
 
